@@ -1,40 +1,37 @@
 // Assignment code here
+var generateBtn = document.querySelector("#generate");
 
-// These 5 variables are greyed out because they are declared, but not read anywhere yet.
-function passwordCriteria () {
-  const characterAmount_string = prompt("How many characters? (Pick a number between 8 and 128)");
-  const characterAmount_Number = Number(characterAmount_string);
-  const includeLowercase = prompt("Would you like to include lowercase letter? (Yes/No)");
-  const includeUppercase = prompt("Would you like to include UPPERCASE letters? (Yes/No)");
-  const includeNumbers = prompt("Would you like to include Numbers? (Yes/No)");
-  const includeSymbols = prompt("Would you like to include Symbols? (Yes/No)");
+
+function generatePassword() {
+  console.log("Button works?");
+
+
+
+  return "Password";
 }
 
-passwordCriteria();
-
-
-
-
-
-
-
-
-
-
 // Get references to the #generate element
-const generateBtn = document.querySelector("#generate");
+// *** this var targets the generate id in HTML. This is targeting the button. 
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+// this function calles the generatePassword function, and then stores that value into a variable called "password".
 function writePassword() {
-  const password = generatePassword();
-  const passwordText = document.querySelector("#password");
-
+  var password = generatePassword();
+  // vv stores the password id in the <div class="card"> which displays where the generated password displays on the screen.> 
+  var passwordText = document.querySelector("#password");
+// vv Takes the value of the generated password and plugs it into the screen. 
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-//
-const form = document.getElementById("passwordGenerator");
-// 
+// *** when a user clicks the generate button, it will call the writePassword function that was provided with the starter code. 
 generateBtn.addEventListener("click", writePassword);
+
+
+// *** how to force user to select a number between 8 and 128, and return a retry if not.
+// *** figure out what starting code does
+// *** create generatePassword() function for the writePassword function to call. THIS IS THE ASSIGNMENT. 
+// psuedo code to help determine what to do = in plain english.
+// 
