@@ -4,13 +4,13 @@
 
 ## Screenshots of Application
 
-Image of application at full screen.
+### Image of application at full screen.
 ![image](https://github.com/Sulxy/Password-Generator-Week-3-Challenge/assets/149080702/11d3c202-90b8-4caf-b67c-cbef70bc6783)
 
-Image of application on mobile. 
+### Image of application on mobile. 
 ![image](https://github.com/Sulxy/Password-Generator-Week-3-Challenge/assets/149080702/21bd2d92-1e4c-4a32-8088-f927f959ee44)
 
-Image of applications errorless console.log after being ran. 
+### Image of applications errorless console.log after being ran. 
 ![image](https://github.com/Sulxy/Password-Generator-Week-3-Challenge/assets/149080702/49ad9425-c0d9-4144-8755-4e41df36a7c8)
 
 
