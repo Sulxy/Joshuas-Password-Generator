@@ -20,7 +20,7 @@ This application will provide a password that meets critera based off of your ow
 
 ## Link to Website
 
-
+https://sulxy.github.io/Password-Generator-Week-3-Challenge/
 
 ## Sources 
 A special thanks goes to Daniel Vega and his youtube channel - it really helped my write and understand the assignment/code. His code is mimic'd, but not outright copied throughout the javascript file, and to Angela and Gabe, who both helped me when I needed it.  
