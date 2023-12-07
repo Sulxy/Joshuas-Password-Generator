@@ -1,5 +1,4 @@
 // Assignment code here
-// var charLength = 8;
 var charArray= [];
 var lowCase = ["a", "b", "c", "d", "e", "f" ,"g" ,"h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y" ,"z"];
 var uppCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -14,8 +13,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   if (properPrompt) {
-    var password = generatePassword();
-    passwordText.value = password;
+    var newPW = generatePassword();
+    passwordText.value = newPW;
   } else {
     passwordText.value = "";
   }
@@ -23,7 +22,7 @@ function writePassword() {
 
 function generatePassword() {
   var password = "";
-  for (var i = 0; i < charLength.length; i++) {
+  for (var i = 0; i < charLength; i++) {
     var randomValue = Math.floor(Math.random() * charArray.length);
     password = password + charArray[randomValue];
   }
