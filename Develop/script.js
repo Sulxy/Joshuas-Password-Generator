@@ -1,9 +1,27 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
 
+// numberOfChars = "tagname"
+
+  // Adds text content to created tag // Dont think this is necessary?
+  //tag.textContent = "This was made via prompts. It's a " + tagName + ".";
+  
+  // Appends tag as child of document body // don't think this is necessary.
+  //document.body.appendChild(tag);
+
+
+
+
+
 
 function generatePassword() {
   console.log("Button works?");
+  var numberOfChars = prompt("Please select the amount of characters in your desired password. (Select a number between 8 and 128)");
+
+  if (numberOfChars >= 8 && numberOfChars <= 128);
+
+    alert("Please enter a valid amount.");
+  
 
 
 
@@ -33,5 +51,10 @@ generateBtn.addEventListener("click", writePassword);
 // *** how to force user to select a number between 8 and 128, and return a retry if not.
 // *** figure out what starting code does
 // *** create generatePassword() function for the writePassword function to call. THIS IS THE ASSIGNMENT. 
-// psuedo code to help determine what to do = in plain english.
-// 
+// psuedo code to help determine what to do = in plain english. Plan things out:
+  // Step 1: Prompt user for the password criteria
+      // Password length 8 < 128
+      // Include lower, upper, numbers, symbols (Use confirm/cancel commands for these.)
+  // Step 2: Validate the input, ensure that at least 1 character type is selected, and that the selected amount of characters is between 8 and 128.
+  // Step 3: Generate Password based on criteria.
+  // Step 4: Display password to page. 
