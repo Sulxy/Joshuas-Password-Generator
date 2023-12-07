@@ -1,12 +1,10 @@
 // Assignment code here
-var charLength = 8;
+// var charLength = 8;
 var charArray= [];
-
 var lowCase = ["a", "b", "c", "d", "e", "f" ,"g" ,"h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y" ,"z"];
 var uppCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbol= ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "[", "]", "/", "`", "~", "|"];
-
 var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", writePassword);
@@ -16,9 +14,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   if (properPrompt) {
-  var newPW = generatePassword();
-  passwordText.value = newPW;
-    } else {
+    var password = generatePassword();
+    passwordText.value = password;
+  } else {
     passwordText.value = "";
   }
 }
@@ -58,5 +56,4 @@ function promptInfo() {
     }
     return true;
 }
-
 
