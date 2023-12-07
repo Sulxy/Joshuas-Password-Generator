@@ -1,60 +1,74 @@
 // Assignment code here
+var charLength = 8;
+var charArray= [];
+
+var lowCase = ["a", "b", "c", "d", "e", "f" ,"g" ,"h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y" ,"z"];
+var uppCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var symbol= ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "[", "]", "/", "`", "~", "|"];
+
+
+
+
+
+
+
+
+
 var generateBtn = document.querySelector("#generate");
-
-// numberOfChars = "tagname"
-
-  // Adds text content to created tag // Dont think this is necessary?
-  //tag.textContent = "This was made via prompts. It's a " + tagName + ".";
-  
-  // Appends tag as child of document body // don't think this is necessary.
-  //document.body.appendChild(tag);
-
-
-
 
 
 
 function generatePassword() {
-  console.log("Button works?");
-  var numberOfChars = prompt("Please select the amount of characters in your desired password. (Select a number between 8 and 128)");
-
-  if (numberOfChars >= 8 && numberOfChars <= 128);
-
-    alert("Please enter a valid amount.");
-  
-
-
-
-  return "Password";
+  var password = "";
+  for (var i = 0; i < charLength.length; i++) {
+    var randomValue = Math.floor(Math.random() * charArray.length);
+    password = password + charArray[randomValue];
+  }
+  return password;
 }
 
-// Get references to the #generate element
-// *** this var targets the generate id in HTML. This is targeting the button. 
-// var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-// this function calles the generatePassword function, and then stores that value into a variable called "password".
+
 function writePassword() {
-  var password = generatePassword();
-  // vv stores the password id in the <div class="card"> which displays where the generated password displays on the screen.> 
+  var properPrompt = promptInfo();
   var passwordText = document.querySelector("#password");
-// vv Takes the value of the generated password and plugs it into the screen. 
-  passwordText.value = password;
-
+  
+  if (properPrompt) {
+  var newPW = generatePassword();
+  passwordText.value = newPW;
+    } else {
+    passwordText.value = "Please try again.";
+  }
 }
 
-// Add event listener to generate button
-// *** when a user clicks the generate button, it will call the writePassword function that was provided with the starter code. 
 generateBtn.addEventListener("click", writePassword);
+}
 
+function promptInfo() {
+  charArray = [];
+  charLength = parseInt(prompt("How many characters are in your desired password? Please choose a number beetween 8 and 128."));
 
-// *** how to force user to select a number between 8 and 128, and return a retry if not.
-// *** figure out what starting code does
-// *** create generatePassword() function for the writePassword function to call. THIS IS THE ASSIGNMENT. 
-// psuedo code to help determine what to do = in plain english. Plan things out:
-  // Step 1: Prompt user for the password criteria
-      // Password length 8 < 128
-      // Include lower, upper, numbers, symbols (Use confirm/cancel commands for these.)
-  // Step 2: Validate the input, ensure that at least 1 character type is selected, and that the selected amount of characters is between 8 and 128.
-  // Step 3: Generate Password based on criteria.
-  // Step 4: Display password to page. 
+    if (isNaN(charLength) || charLength < 8 || charLength > 128) {
+      alert("Please type a numeric value between 8 and 128.");
+      return false;
+    }
+
+    if (confirm("Would you like lowercase letters in your password?")) {
+      charArray = charArray.concat(lowCase);
+    }
+
+    if (confirm("Would you like UPPERCASE letters in your password?")) {
+      charArray = charArray.concat(uppCase);
+    }
+
+    if (confirm("Would you like numbers in your password?")) {
+      charArray = charArray.concat(number);
+    }
+
+    if (confirm("Would you like symbols in your password?")) {
+      charArray = charArray.concat(symbol);
+    }
+
+    return true;
+}
