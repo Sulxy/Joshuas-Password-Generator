@@ -7,17 +7,21 @@ var uppCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbol= ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "[", "]", "/", "`", "~", "|"];
 
-
-
-
-
-
-
-
-
 var generateBtn = document.querySelector("#generate");
 
+generateBtn.addEventListener("click", writePassword);
 
+function writePassword() {
+  var properPrompt = promptInfo();
+  var passwordText = document.querySelector("#password");
+
+  if (properPrompt) {
+  var newPW = generatePassword();
+  passwordText.value = newPW;
+    } else {
+    passwordText.value = "";
+  }
+}
 
 function generatePassword() {
   var password = "";
@@ -26,23 +30,6 @@ function generatePassword() {
     password = password + charArray[randomValue];
   }
   return password;
-}
-
-
-
-function writePassword() {
-  var properPrompt = promptInfo();
-  var passwordText = document.querySelector("#password");
-  
-  if (properPrompt) {
-  var newPW = generatePassword();
-  passwordText.value = newPW;
-    } else {
-    passwordText.value = "Please try again.";
-  }
-}
-
-generateBtn.addEventListener("click", writePassword);
 }
 
 function promptInfo() {
@@ -69,6 +56,7 @@ function promptInfo() {
     if (confirm("Would you like symbols in your password?")) {
       charArray = charArray.concat(symbol);
     }
-
     return true;
 }
+
+
