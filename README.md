@@ -3,9 +3,7 @@
 ## Project for UTSA Full Stack Development Bootcamp
 
 ## Screenshots of Application
-![Screenshot of application at full-width.](image-1.png)
-![Screenshot of errorless console log after the application runs.](image-2.png)
-![Screenshot of application on a mobile device.](image-3.png)
+
 
 ## Features 
 
